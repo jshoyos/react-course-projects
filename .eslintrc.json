@@ -12,7 +12,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "prefer-arrow"
     ],
     "settings": {
         "react": {
@@ -22,6 +23,7 @@
     "rules": {
         "linebreak-style" : ["error", "windows"],
         "require-jsdoc": "off",
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "prefer-arrow/prefer-arrow-functions": "error"
     }
 }
