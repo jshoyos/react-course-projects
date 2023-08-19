@@ -1,8 +1,9 @@
 import React from 'react';
 import Expenses from './components/Expenses/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
 
 // eslint-disable-next-line require-jsdoc
-function App() {
+const App = () => {
   const expenses = [
     {
       id: 'e1',
@@ -27,9 +28,10 @@ function App() {
 
   return (
     <div className="App">
+      <NewExpense/>
       <Expenses items={expenses}/>
     </div>
   );
-}
+};
 
 export default App;
