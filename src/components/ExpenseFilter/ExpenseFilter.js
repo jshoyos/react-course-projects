@@ -1,7 +1,7 @@
 import React from 'react';
 import './ExpenseFilter.css';
 
-const ExpenseFiler = (props) => {
+const ExpenseFilter = (props) => {
   const changeHandler = (event) => {
     props.onFilter(event.target.value);
   };
@@ -11,6 +11,7 @@ const ExpenseFiler = (props) => {
       <div className='expenses-filter__control'>
         <label>Filter by year</label>
         <select value={props.selected} onChange={changeHandler}>
+          <option value='2023'>2023</option>
           <option value='2022'>2022</option>
           <option value='2021'>2021</option>
           <option value='2020'>2020</option>
@@ -21,4 +22,4 @@ const ExpenseFiler = (props) => {
   );
 };
 
-export default ExpenseFiler;
+export default ExpenseFilter;
