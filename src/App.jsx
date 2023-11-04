@@ -1,8 +1,20 @@
 import React from 'react';
+
+import Player from './components/Player';
+
 function App() {
-  console.log('test');
   return (
-    <h1>React Tic-Tac-Toe</h1>
+    <main>
+      <div id='game-container'>
+        {/* PLAYERS SECTION */}
+        <ol id='players'>
+          <Player symbol='X' intialName='Player 1'/>
+          <Player symbol='O' intialName='Player 2'/>
+        </ol>
+        {/* BOARD SECTION */}
+      </div>
+      {/* LOGS SECTION */}
+    </main>
   );
 }
 
