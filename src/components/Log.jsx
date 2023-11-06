@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PropTypes, {array} from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Log = ({turns}) => {
   return (
@@ -16,7 +16,7 @@ const Log = ({turns}) => {
 };
 
 Log.propTypes = {
-  turns: PropTypes.arrayOf(array),
+  turns: PropTypes.array.isRequired,
 };
 
 export default Log;
