@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import PropTypes from 'prop-types';
 import ResultModal from './ResultModal';
