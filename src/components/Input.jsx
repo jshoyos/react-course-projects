@@ -16,6 +16,7 @@ const Input = ({ label, isTextArea, ...props }, ref) => {
   );
 };
 
+Input.displayName = 'Input';
 Input.propTypes = {
   label: PropTypes.string.isRequired,
   isTextArea: PropTypes.bool.isRequired
