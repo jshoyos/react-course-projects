@@ -1,8 +1,9 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
+import Task from './Task';
 
-const SelectedProject = ({ project, onDelete }) => {
+const SelectedProject = ({ project, onDelete, onAddTask, onDeleteTask, tasks }) => {
   const formattedDate = new Date(project.dueDate).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'short',
@@ -22,7 +23,7 @@ const SelectedProject = ({ project, onDelete }) => {
           <p className="mb-4 text-stone-400">{formattedDate}</p>
           <p className="text-stone-600 whitespace-pre-wrap">{project.description}</p>
         </header>
-        TASKS
+        <Task onAddTask={onAddTask} onDeleteTask={onDeleteTask} tasks={tasks} />
       </div>
     </>
   );
@@ -30,7 +31,10 @@ const SelectedProject = ({ project, onDelete }) => {
 
 SelectedProject.propTypes = {
   project: PropTypes.object,
-  onDelete: PropTypes.func.isRequired
+  onDelete: PropTypes.func.isRequired,
+  onAddTask: PropTypes.func.isRequired,
+  onDeleteTask: PropTypes.func.isRequired,
+  tasks: PropTypes.array.isRequired
 };
 
 export default SelectedProject;

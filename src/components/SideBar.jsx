@@ -15,7 +15,7 @@ const SideBar = ({ projects, onStartAddProject, onSelectProject, selectedProject
           {projects.map((project) => {
             let cssClass =
               'w-full text-left px-2 py-1 rounded-sm my-1 hover:text-stone-200 hover:bg-stone-800';
-            if (project === selectedProjectId) cssClass += ' bg-stone-800 text-stone-200';
+            if (project.id === selectedProjectId) cssClass += ' bg-stone-800 text-stone-200';
             else cssClass += ' text-stone-400';
 
             return (
