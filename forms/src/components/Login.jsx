@@ -7,19 +7,21 @@ export default function Login() {
     value: emailValue,
     handleInputChange: handleEmailChange,
     handleInputBlur: handleEmailBlur,
-    hasError: isEmailValid,
+    hasError: emailHasError,
   } = useInput("", (value) => isEmail(value) && isNotEmpty(value));
 
   const {
     value: passwordValue,
     handleInputChange: handlePasswordChange,
     handleInputBlur: handlePasswordBlur,
-    hasError: isPasswordValid,
+    hasError: passwordHasError,
   } = useInput("", hasMinLength);
 
   function handleSubmission(event) {
     event.preventDefault();
-    console.Log("Submitted!");
+    if (emailHasError || passwordHasError) return;
+
+    console.log("submitted");
   }
 
   return (
@@ -35,7 +37,7 @@ export default function Login() {
           value={emailValue}
           onBlur={handleEmailBlur}
           onChange={(event) => handleEmailChange(event)}
-          error={isEmailValid && "Email is invalid"}
+          error={emailHasError && "Email is invalid"}
         />
 
         <Input
@@ -44,7 +46,7 @@ export default function Login() {
           name="password"
           label="password"
           value={passwordValue}
-          error={isPasswordValid && "Password is invalid"}
+          error={passwordHasError && "Password is invalid"}
           onBlur={handlePasswordChange}
           onChange={(event) => handlePasswordBlur(event)}
         />
